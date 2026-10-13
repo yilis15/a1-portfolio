@@ -6,22 +6,392 @@ WRITTEN BY: Yilin Shen
 EMAIL: yilis15@uci.edu
 -->
 
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Yilin Shen">
-  <meta name="description" content="Yilin Shen's portfolio page">
-   <!-- you would link to an external stylesheet here! -->
-   <!-- you would also link to Bootstrap here! -->
-  <title>Yilin Shen | Portfolio</title>
-  <!-- CSS stylesheet link -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yilin Shen">
+    <meta name="description"
+          content="Yilin's personal game gallery, featuring favorite games, stories, and gaming memories.">
+
+    <title>Yilin's Game Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-  <p>
-    <a href="http://validator.w3.org/check?uri=referer">
-       W3C validator
-    </a>
-  </p>
+
+    <!-- Navigation -->
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="#home" class="site-logo">Yilin's Gallery</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home / Personal Introduction -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+                <p class="eyebrow">HEY THERE, I'M</p>
+
+                <h1>Yilin Shen.</h1>
+
+                <p class="hero-subtitle">
+                    Software Engineering Student at UC Irvine
+                </p>
+
+                <p>
+                    I'm really interested in web development
+                    and learning how design and code can
+                    come together to create something fun
+                    and interactive.
+                </p>
+
+                <p>
+                    In INF 133, I'm hoping to explore more
+                    creative ways to build websites.
+                    And since I love video games,
+                    I thought I'd make this assignment
+                    a little more personal!
+                </p>
+
+                <a href="#gallery" class="hero-button">
+                    Explore My Games
+                </a>
+            </div>
+
+            <div class="hero-photo">
+                <!-- Add images/profile.jpg later. -->
+            </div>
+
+        </section>
+
+
+        <!-- Gallery Introduction -->
+        <section id="gallery" class="gallery">
+
+            <div class="section-heading">
+                <p class="eyebrow">WELCOME TO MY COLLECTION</p>
+
+                <h2>Games That Stayed With Me</h2>
+
+                <p>
+                    Some games are just fun to play.
+                    Others become memories that stick
+                    with you for years.
+                </p>
+
+                <p>
+                    Here are three games that have
+                    a special place in my heart.
+                    Flip each card to take a peek
+                    at my gaming journey!
+                </p>
+            </div>
+
+
+            <!-- GAME 01: HOLLOW KNIGHT -->
+            <article class="game-card" id="hollow-knight">
+
+                <div class="game-card-inner">
+
+                    <!-- Front -->
+                    <div class="game-card-front">
+
+                        <div class="game-cover">
+                            <!--
+                            <img src="images/hollow-knight-cover.jpg"
+                                 alt="Hollow Knight game cover">
+                            -->
+                        </div>
+
+                        <div class="game-info">
+                            <p class="game-number">GAME 01</p>
+
+                            <h3>Hollow Knight</h3>
+
+                            <p class="game-tagline">
+                                The game that got me hooked
+                                on a challenge.
+                            </p>
+
+                            <p>
+                                I think Hollow Knight was
+                                the first truly challenging
+                                game I ever played.
+                            </p>
+
+                            <p>
+                                I first tried it on someone
+                                else's PS5, and it took me
+                                two whole days just to beat
+                                one of the early bosses.
+                                But when I finally did,
+                                the feeling was incredible!
+                            </p>
+
+                            <p>
+                                I'd never felt that proud
+                                of myself in a game before.
+                                After that, I downloaded
+                                Hollow Knight on my own PC,
+                                and it quickly became one
+                                of my favorite games.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Back -->
+                    <div class="game-card-back">
+                        <h3>My Hollow Knight Journey</h3>
+
+                        <div class="achievements">
+                            <h4>My Achievements</h4>
+                            <p>Coming soon!</p>
+                        </div>
+
+                        <div class="screenshot-gallery">
+                            <h4>Favorite Moments</h4>
+
+                            <!-- Add game screenshots here later. -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button"
+                        class="flip-button"
+                        aria-pressed="false">
+                    Flip to My Journey
+                </button>
+
+            </article>
+
+
+            <!-- GAME 02: DON'T STARVE TOGETHER -->
+            <article class="game-card" id="dont-starve">
+
+                <div class="game-card-inner">
+
+                    <!-- Front -->
+                    <div class="game-card-front">
+
+                        <div class="game-cover">
+                            <!--
+                            <img src="images/dst-cover.jpg"
+                                 alt="Don't Starve Together game cover">
+                            -->
+                        </div>
+
+                        <div class="game-info">
+                            <p class="game-number">GAME 02</p>
+
+                            <h3>Don't Starve Together</h3>
+
+                            <p class="game-tagline">
+                                My longest-running gaming
+                                obsession.
+                            </p>
+
+                            <p>
+                                My story with Don't Starve
+                                actually started back in
+                                middle school.
+                            </p>
+
+                            <p>
+                                During a school break,
+                                I asked my mom to buy me
+                                the single-player mobile
+                                version. I was hooked
+                                almost immediately!
+                            </p>
+
+                            <p>
+                                I spent so much time watching
+                                gameplay videos and looking
+                                up tips on the wiki,
+                                even though I could barely
+                                survive a few days in the game.
+                            </p>
+
+                            <p>
+                                When I finally got my own
+                                computer in high school,
+                                Don't Starve Together was
+                                the very first game I installed.
+                            </p>
+
+                            <p>
+                                It's still my most-played game
+                                to this day, and honestly,
+                                I think it's the best multiplayer
+                                game to play with family!
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Back -->
+                    <div class="game-card-back">
+                        <h3>My Don't Starve Journey</h3>
+
+                        <div class="achievements">
+                            <h4>My Achievements</h4>
+                            <p>Coming soon!</p>
+                        </div>
+
+                        <div class="screenshot-gallery">
+                            <h4>Favorite Moments</h4>
+
+                            <!-- Add game screenshots here later. -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button"
+                        class="flip-button"
+                        aria-pressed="false">
+                    Flip to My Journey
+                </button>
+
+            </article>
+
+
+            <!-- GAME 03: RAIN WORLD -->
+            <article class="game-card" id="rain-world">
+
+                <div class="game-card-inner">
+
+                    <!-- Front -->
+                    <div class="game-card-front">
+
+                        <div class="game-cover">
+                            <!--
+                            <img src="images/rain-world-cover.jpg"
+                                 alt="Rain World game cover">
+                            -->
+                        </div>
+
+                        <div class="game-info">
+                            <p class="game-number">GAME 03</p>
+
+                            <h3>Rain World</h3>
+
+                            <p class="game-tagline">
+                                Welcome to the food chain.
+                                You're near the bottom.
+                            </p>
+
+                            <p>
+                                I'd heard so many people say
+                                that if you loved Hollow Knight,
+                                Ori, and Terraria, you'd probably
+                                love Rain World too.
+                            </p>
+
+                            <p>
+                                Since I'd already beaten all three,
+                                I bought Rain World as soon as
+                                I saw it on sale.
+                            </p>
+
+                            <p>
+                                Rain World is all about survival.
+                                It doesn't matter how many weapons
+                                you have or how good you are
+                                at moving around.
+                            </p>
+
+                            <p>
+                                At the end of the day,
+                                you're still just a tiny,
+                                squishy, and apparently
+                                delicious slugcat!
+                                Almost everything out there
+                                wants to eat you.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Back -->
+                    <div class="game-card-back">
+                        <h3>My Rain World Journey</h3>
+
+                        <div class="achievements">
+                            <h4>My Achievements</h4>
+                            <p>Coming soon!</p>
+                        </div>
+
+                        <div class="screenshot-gallery">
+                            <h4>Favorite Moments</h4>
+
+                            <!-- Add game screenshots here later. -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button"
+                        class="flip-button"
+                        aria-pressed="false">
+                    Flip to My Journey
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <h2>Thanks for Visiting!</h2>
+
+            <p>
+                That's it for my little game gallery!
+                Thanks for taking a look at some
+                of my favorite games and memories.
+            </p>
+
+            <p>
+                Feel free to say hi or check out
+                what else I'm working on!
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:yilis15@uci.edu">
+                    Email Me
+                </a>
+
+                <a href="https://github.com/yilis15">
+                    My GitHub
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Cora Shen.
+            Made with HTML, CSS, and a love for games.
+        </p>
+    </footer>
+
 </body>
 </html>
