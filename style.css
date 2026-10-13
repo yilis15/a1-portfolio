@@ -1,0 +1,602 @@
+/* 1. Global Styles */
+
+:root {
+    --background: #faf9f6;
+    --card-background: #ffffff;
+    --text-primary: #242424;
+    --text-secondary: #666666;
+    --accent: #596c83;
+    --border: #e6e4df;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.3;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+
+/* 2. Navigation */
+
+header {
+    background-color: rgba(250, 249, 246, 0.97);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.site-logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+
+/* 3. Hero Section */
+
+.hero {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    margin: 10px 0;
+    letter-spacing: -2px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    color: var(--text-secondary);
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+
+    border-radius: 8px;
+    background: var(--text-primary);
+    color: white;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.hero-button:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Hidden until a profile photo is added. */
+.hero-photo:empty {
+    display: none;
+}
+
+.hero-photo img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+
+/* 4. Gallery Introduction */
+
+.gallery {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px 30px 100px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 15px 0;
+}
+
+.section-heading p {
+    color: var(--text-secondary);
+}
+
+
+/* 5. Game Cards */
+
+.game-card {
+    margin-bottom: 45px;
+
+    /* Creates the 3D viewing perspective */
+    perspective: 1500px;
+}
+
+.game-card-inner {
+    display: grid;
+    position: relative;
+
+    /* Preserves the 3D positioning of both faces */
+    transform-style: preserve-3d;
+
+    /* Smooth rotation */
+    transition: transform 0.7s ease;
+}
+
+/* Applied by JavaScript when the card is flipped */
+.game-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/*
+   Both faces share the same grid cell.
+   The taller face determines card height.
+*/
+
+.game-card-front,
+.game-card-back {
+    grid-area: 1 / 1;
+
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Front: image on left, story on right */
+
+.game-card-front {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    position: relative;
+}
+
+.game-cover {
+    min-height: 430px;
+    background: #e8edf2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Placeholder for missing game images */
+
+.game-cover:empty::after {
+    content: "GAME ART COMING SOON";
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #64748b;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-info {
+    padding: 38px 42px;
+    align-self: center;
+    min-width: 0;
+}
+
+.game-number {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.game-info h3 {
+    font-size: clamp(26px, 3vw, 36px);
+    margin: 10px 0;
+}
+
+.game-tagline {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: italic;
+}
+
+.game-info p {
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.game-info p:not(.game-number):not(.game-tagline) {
+    color: var(--text-secondary);
+}
+
+
+/* 6. Back of Game Cards */
+
+.game-card-back {
+    transform: rotateY(180deg);
+    padding: 26px 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 22px;
+
+    position: relative;
+}
+
+.journey-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.journey-section h4 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.journey-section p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Remove the oversized box feeling */
+.achievements {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.screenshot-grid img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #f2f2f2;
+}
+
+/* 7. Flip Button */
+
+.flip-button {
+    display: block;
+    margin: 15px auto 0;
+    padding: 12px 24px;
+
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.flip-button:hover {
+    background: var(--text-primary);
+    color: white;
+}
+
+
+/* 8. Game-specific Visual Details */
+
+#hollow-knight .game-cover {
+    background: #dce7f2;
+}
+
+#dont-starve .game-cover {
+    background: #eee3d2;
+}
+
+#rain-world .game-cover {
+    background: #dce4dc;
+}
+
+
+/* 9. Contact */
+
+.contact {
+    text-align: center;
+    padding: 85px 30px;
+    background: #f0efeb;
+}
+
+.contact h2 {
+    font-size: 36px;
+}
+
+.contact p {
+    max-width: 600px;
+    margin: 15px auto;
+    color: var(--text-secondary);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-links a {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* 10. Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+
+/* 11. Tablet Layout */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        gap: 35px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .game-info {
+        padding: 25px;
+    }
+
+    .game-info h3 {
+        font-size: 28px;
+    }
+
+    .game-info p {
+        font-size: 14px;
+    }
+
+}
+
+
+/* 12. Mobile Layout */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 60px 20px;
+        gap: 30px;
+    }
+
+    .hero-photo img {
+        max-height: 330px;
+        object-fit: cover;
+    }
+
+    .gallery {
+        padding: 30px 20px 70px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .game-card-front {
+        grid-template-columns: 1fr;
+    }
+
+    .game-cover {
+        min-height: 0;
+        height: 260px;
+    }
+
+    .game-info {
+        padding: 25px;
+    }
+
+    .game-card-back {
+        padding: 25px;
+    }
+
+    .game-card-back h3 {
+        font-size: 24px;
+    }
+
+    .contact {
+        padding: 65px 20px;
+    }
+
+    .screenshot-grid {
+    grid-template-columns: 1fr;
+    }
+
+    .game-card-back {
+        padding: 22px;
+    }
+
+    .journey-title {
+        font-size: 20px;
+    }
+}
+
+
+/* 13. Small Phones */
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 17px;
+    }
+
+    .game-info {
+        padding: 20px;
+    }
+
+    .game-info p {
+        font-size: 14px;
+    }
+
+    .game-cover {
+        height: 205px;
+    }
+
+    .game-card-back {
+        padding: 20px;
+    }
+
+}
+
+
+/* 14. Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+}
